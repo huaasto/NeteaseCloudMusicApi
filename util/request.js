@@ -138,6 +138,8 @@ const createRequest = (method, url, data = {}, options) => {
       httpsAgent: new https.Agent({ keepAlive: true }),
     }
 
+    console.log(333, headers)
+
     if (options.crypto === 'eapi') settings.encoding = null
 
     if (options.proxy) {
