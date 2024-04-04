@@ -89,6 +89,8 @@ const createRequest = (method, url, data = {}, options) => {
       data.csrf_token = csrfToken ? csrfToken[1] : ''
       data = encrypt.weapi(data)
       url = url.replace(/\w*api/, 'weapi')
+      console.log(data);
+      console.log(url);
     } else if (options.crypto === 'linuxapi') {
       data = encrypt.linuxapi({
         method: method,
@@ -129,6 +131,7 @@ const createRequest = (method, url, data = {}, options) => {
       url = url.replace(/\w*api/, 'eapi')
     }
     const answer = { status: 500, body: {}, cookie: [] }
+    console.log(headers);
     let settings = {
       method: method,
       url: url,
