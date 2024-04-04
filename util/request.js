@@ -85,6 +85,7 @@ const createRequest = (method, url, data = {}, options) => {
     }
     // console.log(options.cookie, headers['Cookie'])
     if (options.crypto === 'weapi') {
+      console.log(3777733, data)
       let csrfToken = (headers['Cookie'] || '').match(/_csrf=([^(;|$)]+)/)
       data.csrf_token = csrfToken ? csrfToken[1] : ''
       data = encrypt.weapi(data)
