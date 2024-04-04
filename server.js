@@ -207,6 +207,7 @@ async function consturctServer(moduleDefs) {
     // Register the route.
     app.use(moduleDef.route, async (req, res) => {
       ;[req.query, req.body].forEach((item) => {
+        console.log(888, item.cookie)
         if (typeof item.cookie === 'string') {
           item.cookie = cookieToJson(decode(item.cookie))
         }
